@@ -1,9 +1,9 @@
 ## Automation test task
 
 **This is a simple test on https://github.com/ website that searches for a repo via the search form on the gitgub top navigator,
-checks if the repo shows in the test results and if you get redirected to the right repo when chosen.
+checks if the repo shows in the test results and if you get redirected to the right repo when chosen.**
 
-**This test is written with python, tests are done by the unit testing framework. Using the selenium webdriver for browser automation.
+**This test is written with python, tests are done by the unit testing framework. Using the selenium webdriver for browser automation.**
 
 **Comments are added inside lines of code for full details on functions.**
 
