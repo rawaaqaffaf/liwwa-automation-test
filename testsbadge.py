@@ -22,7 +22,7 @@ class TEST_GITHUB_SEARCH_BASE(unittest.TestCase):
 		self.driver  = webdriver.Chrome()  
 		self.driver.get("https://github.com/")   
 		print("We are on the home page")   
-		self.driver.maximize_window() 
+		self.driver.maximize_window()  
  
 
 	def test_home_page_loaded_successfully(self):
