@@ -10,7 +10,6 @@ parentdir = os.path.dirname(currentdir)
 # insert path to the folder from parent directory from which the python module/ file is to be imported
 sys.path.insert(0, parentdir +'/locators')
 sys.path.insert(0, parentdir +'/pages')
-sys.path.insert(0, parentdir +'/drivers')
 
 from locators import HomePageLocators
 from basePage import HomePageClass 
@@ -20,7 +19,7 @@ from basePage import SearchPageClass
 class TEST_GITHUB_SEARCH_BASE(unittest.TestCase):
 	@classmethod
 	def setUp(self): 
-		self.driver  = webdriver.Chrome("C:/Python27/liwwa_automation_test/drivers/chromedriver.exe")
+		self.driver  = webdriver.Chrome( currentdir +"/drivers/chromedriver.exe")
 		self.driver.get("https://github.com/") 
 		print("We are on the home page")
 		self.driver.maximize_window()
