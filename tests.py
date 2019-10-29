@@ -18,13 +18,7 @@ from basePage import SearchPageClass
  
 class TEST_GITHUB_SEARCH_BASE(unittest.TestCase):
 	@classmethod 
-	def setUp(self): 
-		self.driver  = webdriver.Chrome() 
-		self.driver.get("https://github.com/") 
-		print("We are on the home page")
-		self.driver.maximize_window()
  
-
 	def test_home_page_loaded_successfully(self):
 		driver = self.driver
 		self.assertEqual("The world’s leading software development platform · GitHub", driver.title)
@@ -55,12 +49,6 @@ class TEST_GITHUB_SEARCH_BASE(unittest.TestCase):
 		searchpagecaller.search_for_the_repo_name() 
 		self.assertEqual("https://github.com/python/cpython", self.driver.current_url)  
 
-
-
-	@classmethod 
-	def tearDown(self):
-		self.driver.close()
-		self.driver.quit()
  
 if __name__ == '__main__':
     #unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output=parentdir + '/Reports')) 
