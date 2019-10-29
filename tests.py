@@ -17,9 +17,9 @@ from basePage import SearchPageClass
 
  
 class TEST_GITHUB_SEARCH_BASE(unittest.TestCase):
-	@classmethod
+	@classmethod 
 	def setUp(self): 
-		self.driver  = webdriver.Chrome("C:/Python27/liwwa_automation_test/drivers/chromedriver.exe")
+		self.driver  = webdriver.Chrome(currentdir + "/chromedriver.exe") 
 		self.driver.get("https://github.com/") 
 		print("We are on the home page")
 		self.driver.maximize_window()
@@ -29,7 +29,7 @@ class TEST_GITHUB_SEARCH_BASE(unittest.TestCase):
 		driver = self.driver
 		self.assertEqual("The world’s leading software development platform · GitHub", driver.title)
 
-	def test_entering_search_term(self):
+	def test_entering_search_term(self): 
 		driver = self.driver 
 		homepagecaller = HomePageClass(driver) 
 		homepagecaller.enter_search_term()
