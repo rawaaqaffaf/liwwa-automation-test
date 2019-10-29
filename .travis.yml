@@ -4,8 +4,11 @@ python:
 
 install: pip install -r requirements.txt
 # command to run tests 
-before_script: 
-  - wget http://chromedriver.storage.googleapis.com/78.0.3904.70/chromedriver_linux64.zip
-  - unzip chromedriver_linux64.zip -d /home/travis/build/rawaaqaffaf/liwwa-automation-test
-  - export CHROME_BIN=chromium-browser
+before_install:
+ - export DISPLAY=:99.0
+ - sh -e /etc/init.d/xvfb start
+ - sleep 3 # give xvfb some time to start
+
+addons:
+  chrome: stable
 script: python tests.py 
