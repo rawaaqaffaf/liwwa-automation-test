@@ -19,7 +19,7 @@ from basePage import SearchPageClass
 class TEST_GITHUB_SEARCH_BASE(unittest.TestCase):
 	@classmethod 
 	def setUp(self): 
-		self.driver  = webdriver.Chrome(currentdir + "/chromedriver.exe") 
+		self.driver  = webdriver.Chrome() 
 		self.driver.get("https://github.com/") 
 		print("We are on the home page")
 		self.driver.maximize_window()
