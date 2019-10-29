@@ -36,4 +36,4 @@ This test runs on a windows P.C , MacOS
 
 ## How to run tests?
 open command line and change the directory to cloned_repository\liwwa_automation_test\tests.
-run the tests by typing : 'python tests.py'
+run the tests by typing : `python tests.py`
