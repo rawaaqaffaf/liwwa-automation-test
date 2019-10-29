@@ -17,7 +17,7 @@ from basePage import SearchPageClass
 
  
 class TEST_GITHUB_SEARCH_BASE(unittest.TestCase):
- 
+
 
 	def test_home_page_loaded_successfully(self):
 		driver = self.driver
@@ -48,7 +48,7 @@ class TEST_GITHUB_SEARCH_BASE(unittest.TestCase):
 		searchpagecaller = SearchPageClass(driver)
 		searchpagecaller.search_for_the_repo_name() 
 		self.assertEqual("https://github.com/python/cpython", self.driver.current_url)  
-
+ 
  
 if __name__ == '__main__':
     #unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output=parentdir + '/Reports')) 
