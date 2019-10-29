@@ -40,7 +40,7 @@ class TEST_GITHUB_SEARCH_BASE(unittest.TestCase):
 		
  
 #in this test case we test you get redirected to the repo search page after you click enter for the search term 
-	def test_redirecting_to_repo_search_page(self):
+	def test_redirecting_to_repo_search_page(self): 
 		driver = self.driver 
 		homepagecaller = HomePageClass(driver)
 		homepagecaller.enter_search_term()
