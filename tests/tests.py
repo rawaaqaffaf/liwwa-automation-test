@@ -16,10 +16,10 @@ from basePage import HomePageClass
 from basePage import SearchPageClass
 
  
-class TEST_GITHUB_SEARCH_BASE(unittest.TestCase):
+class TEST_GITHUB_SEARCH_BASE(unittest.TestCase): 
 	@classmethod 
 	def setUp(self): 
-		self.driver  = webdriver.Chrome("/drivers/chromedriver.exe") 
+		self.driver  = webdriver.Chrome(executable_path='./chromedriver') 
 		self.driver.get("https://github.com/") 
 		print("We are on the home page")
 		self.driver.maximize_window()
@@ -36,7 +36,7 @@ class TEST_GITHUB_SEARCH_BASE(unittest.TestCase):
 		search_bar_element = self.driver.find_element_by_xpath(HomePageLocators.search_bar_xpath)
 		print(search_bar_element.get_attribute("value"))
 		self.assertEqual("python/cpython" , search_bar_element.get_attribute("value") )  
-		#basepagecaller = BasePageClass(driver)
+		#basepagecaller = BasePageClass(driver) 
   
 	def test_redirecting_to_repo_search_page(self):
 		driver = self.driver
