@@ -10,9 +10,10 @@ parentdir = os.path.dirname(currentdir)
 # insert path to the folder from parent directory from which the python module/ file is to be imported
 sys.path.insert(0, parentdir +'/locators')
 sys.path.insert(0, parentdir +'/pages')
+sys.path.insert(0, parentdir +'/drivers')
 
 from locators import HomePageLocators
-from basePage import HomePageClass
+from basePage import HomePageClass 
 from basePage import SearchPageClass
 
  
@@ -44,7 +45,7 @@ class TEST_GITHUB_SEARCH_BASE(unittest.TestCase):
 		homepagecaller.enter_search_term()
 		homepagecaller.click_searh_repo()
 		self.assertEqual("Search · python/cpython · GitHub" , self.driver.title)
- 
+  
   
 	def test_chose_the_repo(self):
 		driver = self.driver
