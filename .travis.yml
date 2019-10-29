@@ -4,4 +4,8 @@ python:
 
 install: pip install -r requirements.txt
 # command to run tests 
+before_script: 
+  - wget http://chromedriver.storage.googleapis.com/78.0.3904.70/chromedriver_linux64.zip
+  - unzip chromedriver_linux64.zip -d /home/travis/build/rawaaqaffaf/liwwa-automation-test
+  - export CHROME_BIN=chromium-browser
 script: python tests.py 
