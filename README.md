@@ -1,10 +1,13 @@
 ## Automation test task
 
-This is a simple test on https://github.com/ website that searches for a repo via the search form on the gitgub top navigator,
+**This is a simple test on https://github.com/ website that searches for a repo via the search form on the gitgub top navigator,
 checks if the repo shows in the test results and if you get redirected to the right repo when chosen.
-This test is written with python, tests are done by the unit testing framework. Using the selenium webdriver for browser automation.
-Comments are added inside lines of code for full details on functions.
-Elements are mostly located via xpath and the css_selector.
+
+**This test is written with python, tests are done by the unit testing framework. Using the selenium webdriver for browser automation.
+
+**Comments are added inside lines of code for full details on functions.**
+
+**Elements are mostly located via xpath and the css_selector.**
 
 
 ## Project Design:
