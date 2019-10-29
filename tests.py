@@ -1,5 +1,5 @@
 import unittest
-import HtmlTestRunner
+#import HtmlTestRunner
 from selenium import webdriver
 
 import os, sys, inspect
@@ -63,6 +63,7 @@ class TEST_GITHUB_SEARCH_BASE(unittest.TestCase):
 		self.driver.quit()
  
 if __name__ == '__main__':
-    unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output=parentdir + '/Reports')) 
-     
+    #unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output=parentdir + '/Reports')) 
+    unittest.main()
+      
 	 
