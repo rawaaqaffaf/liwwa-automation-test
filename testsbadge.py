@@ -1,6 +1,7 @@
 import unittest
 #import HtmlTestRunner
 from selenium import webdriver
+from selenium.webdriver import *
 
 import os, sys, inspect
 # fetch path to the directory in which current file is, from root directory or C:\ (or whatever driver number it is)
@@ -16,10 +17,10 @@ from basePage import HomePageClass
 from basePage import SearchPageClass
 
  
-class TEST_GITHUB_SEARCH_BASE(unittest.TestCase):
+class TEST_GITHUB_SEARCH_BASE(unittest.TestCase): 
 	@classmethod 
 	def setUp(self): 
-		self.driver  = webdriver.Chrome()  
+		self.driver  = Chrome("drivers/chromedriver")  
 		self.driver.get("https://github.com/")   
 		print("We are on the home page")   
 		self.driver.maximize_window()  
