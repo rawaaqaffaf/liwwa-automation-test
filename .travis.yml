@@ -2,7 +2,9 @@ language: python
 python:
   - "3.6"
  
-install: pip install -r requirements.txt
+install: 
+  - pip install -r requirements.txt
+  - pip install codecov
 # command to run tests 
 
 addons:
@@ -17,7 +19,10 @@ before_install:
   
 addons:
   chrome: stable
-
-
   
-script: python testsbadge.py      
+script: 
+  - python testsbadge.py 
+  - coverage run testsbadge.py    
+
+after_success:
+  - codecov 
