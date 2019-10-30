@@ -13,4 +13,4 @@ before_script:
 addons:
   chrome: stable
   
-script: python tests.py 
+script: python testsbadge.py   
