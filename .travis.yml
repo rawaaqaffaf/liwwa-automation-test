@@ -10,15 +10,11 @@ addons:
   
 services:
   - xvfb
-   
+
 before_install:
   - wget http://chromedriver.storage.googleapis.com/78.0.3904.70/chromedriver_linux64.zip
   - unzip chromedriver_linux64.zip -d drivers  
   
-before_script:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-
 addons:
   chrome: stable
 
