@@ -9,36 +9,37 @@ currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentfram
 # extract the path to parent directory
 parentdir = os.path.dirname(currentdir)
 # insert path to the folder from parent directory from which the python module/ file is to be imported
-sys.path.insert(0, currentdir +'/locators')
-sys.path.insert(0, currentdir +'/pages')
+sys.path.insert(0, currentdir +'/locators') 
+sys.path.insert(0, currentdir +'/pages') 
 
 from locators import HomePageLocators
 from basePage import HomePageClass
 from basePage import SearchPageClass
 
- 
+# This is the TEST GITHUB SEARCH BASE class 
 class TEST_GITHUB_SEARCH_BASE(unittest.TestCase): 
+	#we set up the test scenario here
 	@classmethod 
 	def setUp(self): 
 		self.driver  = Chrome("drivers/chromedriver")  
-		self.driver.get("https://github.com/")   
-		print("We are on the home page")   
+		self.driver.get("https://github.com/")     
 		self.driver.maximize_window()  
  
-
+#in this test case we test if the home page have loaded succefully
 	def test_home_page_loaded_successfully(self):
 		driver = self.driver
-		self.assertEqual("The world’s leading software development platform · GitHub", driver.title)
+		self.assertEqual("The world’s leading software development platform · GitHub", driver.title) 
 
+
+#in this test case , we check if search term was added succefully
 	def test_entering_search_term(self): 
 		driver = self.driver 
 		homepagecaller = HomePageClass(driver) 
 		homepagecaller.enter_search_term()
 		search_bar_element = self.driver.find_element_by_xpath(HomePageLocators.search_bar_xpath)
-		print(search_bar_element.get_attribute("value"))
-		self.assertEqual("python/cpython" , search_bar_element.get_attribute("value") )  
-		#basepagecaller = BasePageClass(driver)
-  
+		self.assertEqual("python/cpython" , search_bar_element.get_attribute("value") )     
+
+#in this test case we test you get redirected to the repo search page after you click enter for the search term 
 	def test_redirecting_to_repo_search_page(self):
 		driver = self.driver
 		homepagecaller = HomePageClass(driver) 
@@ -46,20 +47,20 @@ class TEST_GITHUB_SEARCH_BASE(unittest.TestCase):
 		homepagecaller.click_searh_repo()
 		self.assertEqual("Search · python/cpython · GitHub" , self.driver.title)
  
-  
+ #in this test case we Test if you find your search result and get redirected to the repo page   
 	def test_chose_the_repo(self):
 		driver = self.driver
 		homepagecaller = HomePageClass(driver)  
 		homepagecaller.enter_search_term()
 		homepagecaller.click_searh_repo()
-		searchpagecaller = SearchPageClass(driver)
+		searchpagecaller = SearchPageClass(driver)  
 		searchpagecaller.search_for_the_repo_name() 
 		self.assertEqual("https://github.com/python/cpython", self.driver.current_url)  
 
 
-
+#here we launch the teardown method for the test scenario
 	@classmethod 
-	def tearDown(self):
+	def tearDown(self): 
 		self.driver.close()
 		self.driver.quit()
  
