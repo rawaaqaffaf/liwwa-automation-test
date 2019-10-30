@@ -35,5 +35,8 @@ This test runs on a windows P.C , MacOS
 
 
 ## How to run tests?
+[![Build Status](https://travis-ci.com/rawaaqaffaf/liwwa-automation-test.svg?branch=master)](https://travis-ci.com/rawaaqaffaf/liwwa-automation-test)
+
+
 open command line and change the directory to cloned_repository\liwwa_automation_test\tests.
 run the tests by typing : `python tests.py`
