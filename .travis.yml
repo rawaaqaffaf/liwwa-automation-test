@@ -21,8 +21,8 @@ addons:
   chrome: stable
   
 script: 
-  - python testsbadge.py 
   - coverage run testsbadge.py    
 
 after_success:
-  - codecov 
+  - bash <(curl -s https://codecov.io/bash) 
+ 
